@@ -1,0 +1,97 @@
+{
+  "n_raw": 1064,
+  "n_unique": 821,
+  "danceability_correlations": {
+    "valence": 0.4204453638936245,
+    "acousticness": -0.27276225823345035,
+    "loudness": 0.23421522648752627,
+    "time_signature": 0.21434105262223943,
+    "energy": 0.1990300126328905,
+    "speechiness": 0.11323332566031502,
+    "tempo": -0.1002265191669218,
+    "instrumentalness": -0.089262226003144,
+    "mode": -0.08725768697631277,
+    "liveness": -0.05890465823225746
+  },
+  "danceability_valence_r": 0.4204453638936245,
+  "energy_by_mode_notebook": {
+    "n_major": 469,
+    "n_minor": 352,
+    "mean_major": 0.6063918976545842,
+    "mean_minor": 0.6599829545454545,
+    "se_major": 0.009024254916366235,
+    "se_minor": 0.009170750263740176,
+    "diff": -0.05359105689087029,
+    "test_stat": -0.005704942714911143,
+    "df": 33,
+    "p_value": 0.9954824879935666
+  },
+  "energy_by_mode_welch": {
+    "statistic": -4.165249876239382,
+    "p_value": 3.44906462928923e-05
+  },
+  "ols": {
+    "formula": "energy ~ loudness + valence + liveness + key_name + acousticness + time_signature",
+    "r_squared": 0.7216151407506539,
+    "adj_r_squared": 0.7160751435516619,
+    "params": {
+      "Intercept": 0.7135850225126169,
+      "key_name[T.A#]": -0.0047358252129786615,
+      "key_name[T.B]": -0.01993043291564521,
+      "key_name[T.C]": -0.02281439429581905,
+      "key_name[T.C#]": -0.027373716985349524,
+      "key_name[T.D]": -0.015915716389358667,
+      "key_name[T.D#]": -0.03589077438387868,
+      "key_name[T.E]": -0.03516124470212878,
+      "key_name[T.F]": -0.05180193388374013,
+      "key_name[T.F#]": -0.027261283845580506,
+      "key_name[T.G]": -0.0063419464037495765,
+      "key_name[T.G#]": -0.012822862710234278,
+      "loudness": 0.03511710520405831,
+      "valence": 0.12923914335032083,
+      "liveness": 0.12414134294211744,
+      "acousticness": -0.23004066027465198,
+      "time_signature": 0.03511031330068523
+    },
+    "pvalues": {
+      "Intercept": 9.78660917884974e-48,
+      "key_name[T.A#]": 0.802327054853903,
+      "key_name[T.B]": 0.24496718194983227,
+      "key_name[T.C]": 0.17779771890904122,
+      "key_name[T.C#]": 0.10224284270905963,
+      "key_name[T.D]": 0.3482955501396593,
+      "key_name[T.D#]": 0.10598572067319675,
+      "key_name[T.E]": 0.06785924458255226,
+      "key_name[T.F]": 0.00328506367769596,
+      "key_name[T.F#]": 0.13302936848758207,
+      "key_name[T.G]": 0.7150645954167792,
+      "key_name[T.G#]": 0.48410506588543184,
+      "loudness": 8.28423689471679e-67,
+      "valence": 5.4772353434723274e-14,
+      "liveness": 4.4981958452950254e-06,
+      "acousticness": 9.519415169651578e-40,
+      "time_signature": 0.0006270310543914022
+    }
+  },
+  "logit": {
+    "formula": "mode ~ tempo + energy + danceability + valence + time_signature",
+    "llr_pvalue": 0.003315357436448431,
+    "pseudo_r_squared": 0.01971044441185743,
+    "params": {
+      "Intercept": 2.5275226452014565,
+      "tempo": 0.0035094102227425676,
+      "energy": -1.2388013085163165,
+      "danceability": -0.8006396526442896,
+      "valence": -0.09848612462015219,
+      "time_signature": -0.3424854376316189
+    },
+    "pvalues": {
+      "Intercept": 0.028522669431925107,
+      "tempo": 0.24408684143681314,
+      "energy": 0.01504442250020968,
+      "danceability": 0.23124388153322983,
+      "valence": 0.8159269680550405,
+      "time_signature": 0.20889306983022282
+    }
+  }
+}
