@@ -24,10 +24,18 @@ publishes, recorded in `data/manifest.json` (Harvard Dataverse MD5, figshare MD5
   VO2, VCO2, respiration rate, ventilation, plus age, sex, height, weight per test.
 - Files: `test_measure.csv` (22 MB), `subject-info.csv`.
 - Source: PhysioNet, https://doi.org/10.13026/7ezk-j442 (version 1.0.1), open access.
-- License: the project page lists the PhysioNet Contributor Review Health Data License 1.5.0; the
-  `LICENSE.txt` shipped with the files is CC BY-NC-SA 4.0. Both allow research use with attribution.
-  This repo does not redistribute the files and commits only aggregate per-test summaries
-  (`results/tables/physio_treadmill_per_test.csv`, no identifiers beyond the dataset's own test ids).
+- License: the project page lists the PhysioNet Contributor Review Health Data License 1.5.0, and
+  the `LICENSE.txt` shipped with the files is CC BY-NC-SA 4.0 (attribution, non-commercial,
+  share-alike). The raw files are not redistributed here. Only population aggregates derived from
+  them are committed, with no per-test or per-person rows, and those derived files are shared
+  under **CC BY-NC-SA 4.0, not MIT**:
+  - `results/tables/physio_zone_entry_speeds.csv`
+  - `results/tables/physio_hr_by_speed.csv`
+  - the `treadmill` block of `results/tables/physio_summary.json`
+  - the treadmill rows of `results/tables/physio_prediction_scores.csv`
+  - `results/tables/physio_tempo_zone_map.csv` (its speed bands come from this dataset)
+  - `results/figures/physio_hr_vs_speed.png`, `results/figures/physio_tempo_zone_map.png`, and the
+    treadmill panel of `results/figures/physio_prediction_scores.png`
 - Cite: Mongin D, García Romero J, Alvero Cruz JR. Treadmill Maximal Exercise Tests from the
   Exercise Physiology and Human Performance Lab of the University of Malaga (version 1.0.1).
   PhysioNet (2021). https://doi.org/10.13026/7ezk-j442

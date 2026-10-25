@@ -1,6 +1,20 @@
-# Methods
+# Appendix: Spotify audio-feature study
 
-This file restates what the original notebook actually did. It does not add new tests.
+A separate statistical study of the 821 pop tracks whose tempo and energy feed the tempo-to-zone
+mapping. It is regenerated from the saved CSV by `python -m src`, which writes
+`results/tables/analysis_summary.json`, the other non-`physio_` tables, and the non-`physio_`
+figures.
+
+## Results
+
+| Analysis | Result |
+| --- | --- |
+| Largest correlation with danceability | valence, r = 0.42 (acousticness -0.27, loudness 0.23, energy 0.20, tempo -0.10) |
+| Mean energy, major vs minor | 0.606 (n = 469) vs 0.660 (n = 352); the notebook's test gave p = 0.995 |
+| Energy OLS (loudness, valence, liveness, key, acousticness, time signature) | R² = 0.722 (adjusted 0.716) |
+| Major/minor logistic regression | McFadden pseudo-R² = 0.020 |
+
+The sections below restate what the original notebook did. They do not add new tests.
 
 ## Sample
 
@@ -20,7 +34,7 @@ The function is seeded, but Spotify search ranking changes, so a new pull will n
 - Cast numeric feature columns to float.
 - Drop duplicate `track_id` values (`n = 821` unique tracks).
 - Map `mode` 1 → Major, else Minor.
-- Map integer `key` 0–11 to `C` … `B`.
+- Map integer `key` 0-11 to `C` … `B`.
 
 ## Analyses that exist
 
@@ -32,8 +46,4 @@ The function is seeded, but Spotify search ranking changes, so a new pull will n
 
 ## Mood playlist
 
-`src/mood_playlist.py` is the later notebook helper. An adjective maps to a valence interval. Tracks inside that interval are ranked by the sum of z-scored danceability, energy, acousticness, instrumentalness, and liveness. This is a ranking rule, not an experiment.
-
-## Audio edit
-
-`src/tune.py` is the HarmoniAI prototype: slow pitch/tempo by 5 percent, fade in, add reverb, mix generated rain. It does not read heart rate or running files.
+`src/mood_playlist.py` is a later notebook helper. An adjective maps to a valence interval. Tracks inside that interval are ranked by the sum of z-scored danceability, energy, acousticness, instrumentalness, and liveness. This is a ranking rule, not an experiment.

@@ -5,8 +5,9 @@
 - `data/processed/pop_tracks_raw.csv`: Spotify audio features for public tracks (ids, titles,
   artist names, feature vector). Not listening history, not health data.
 - `data/manifest.json`: download URLs and published checksums for the open physiology datasets.
-- `results/tables/physio_*`: aggregate or per-test summaries derived from the open datasets. The
-  per-test table carries only the dataset's own anonymous test ids.
+- `results/tables/physio_*`: population aggregates and model scores derived from the open
+  datasets. No per-person or per-test treadmill rows are committed. Files derived from the
+  PhysioNet treadmill data are CC BY-NC-SA 4.0 (see `docs/DATA.md`).
 - `tests/fixtures/synthetic_export.xml`: a synthetic Apple Health export used by the tests.
 
 ## What is not in git
@@ -22,4 +23,5 @@
 ## Claims
 
 Nothing in this repo is a controlled study of how music affects heart rate, cadence, or mood.
-The tempo-to-zone table is a cross-dataset mapping, and the mood playlist helper is a ranking rule.
+The tempo-to-zone table is a cross-dataset mapping, and the mood-playlist helper in the Spotify
+appendix is a ranking rule.

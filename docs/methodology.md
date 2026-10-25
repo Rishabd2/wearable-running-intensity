@@ -1,7 +1,7 @@
 # Methodology: running physiology and the tempo mapping
 
 This page covers the physiology half (`src/physio/`). The Spotify feature study is in
-`docs/methods.md`. Dataset licenses and citations are in `docs/DATA.md`.
+`docs/spotify-features.md`. Dataset licenses and citations are in `docs/DATA.md`.
 
 ## What is measured and what is mapped
 
@@ -39,9 +39,11 @@ Apple Health export the user passes a measured HRmax, or age for the Tanaka esti
 - Features: HR-only model uses `hear_rate`, `norm_heart` (HR minus resting HR) and
   `intensity_karvonen` (fraction of HR reserve). The full model adds steps, distance, calories,
   the dataset's entropy and HR-steps correlation features, and age, sex, height, weight.
-- Models: majority class, standardized logistic regression (HR features only), random forest
-  (200 trees, all features).
-- Validation: 5-fold `GroupKFold` by participant group is the headline. A stratified 5-fold split
+- Models: majority class, standardized logistic regression, and a 200-tree random forest. Logistic
+  regression and random forest are each fitted on the HR-only and on the full feature set, so the
+  effect of the model family and of the features can be read separately.
+- Validation: 5-fold `GroupKFold` by participant group is the headline. Scores are the mean and
+  sample SD of accuracy and macro F1 over the 5 test folds (`src/physio/cv.py`). A stratified 5-fold split
   over rows is also reported to show how much a row split overstates accuracy: rows from the same
   person and activity share near-constant features (resting HR, entropy, demographics), so a row
   split lets the model recognize the person.
@@ -57,6 +59,7 @@ Apple Health export the user passes a measured HRmax, or age for the Tanaka esti
 - Per test: peak HR; OLS slope of HR on speed over effort breaths at 7 km/h or faster (bpm per
   km/h); the belt speed when HR first reached 60, 70, 80 and 90 percent of peak HR; and HRR60, HR
   at the end of effort minus HR 60 s later (only when a breath exists within 75 s of that mark).
+  These per-test values stay in memory; only their population medians and quantiles are written.
 - Zone prediction without HR: each effort breath is labeled with its measured zone. Models predict
   that label from speed alone (logistic) or from speed, elapsed time, age, sex, weight and height
   (histogram gradient boosting). Every 5th breath is used. 5-fold `GroupKFold` by participant id,
