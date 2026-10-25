@@ -2,20 +2,24 @@
 
 ## What is in git
 
-`data/processed/pop_tracks_raw.csv` is a Spotify audio-feature table: public track IDs, titles, artist names, and the API feature vector (tempo, danceability, energy, and so on). It is not personal listening history and it is not health data.
-
-Spotify client secrets are not in the repo. Use `.env.example`. Older notebooks in Downloads had a dummy client id/secret in source; those strings were not copied here.
+- `data/processed/pop_tracks_raw.csv`: Spotify audio features for public tracks (ids, titles,
+  artist names, feature vector). Not listening history, not health data.
+- `data/manifest.json`: download URLs and published checksums for the open physiology datasets.
+- `results/tables/physio_*`: aggregate or per-test summaries derived from the open datasets. The
+  per-test table carries only the dataset's own anonymous test ids.
+- `tests/fixtures/synthetic_export.xml`: a synthetic Apple Health export used by the tests.
 
 ## What is not in git
 
-No Apple Watch export, HealthKit XML, workout CSV, or heart-rate series was found under `/Users/rishabdoshi/Downloads` or in nearby project folders. Those files are personal health records.
+- Raw physiology files. `python -m src.physio.fetch` downloads them to `data/raw/` (gitignored).
+  The Malaga treadmill data is under a PhysioNet health-data license that forbids attempts to
+  re-identify participants; nothing here tries to.
+- Personal health records. A real `export.xml` belongs in `data/raw/apple_health/` and stays out
+  of git. The parser never reads source names, device strings, or GPS routes, and its output
+  (`results/tables/my_runs.csv`) should be reviewed before it is shared.
+- Spotify client secrets. Use `.env` (see `.env.example`); it is gitignored.
 
-If a Watch export shows up later:
+## Claims
 
-- Keep the raw file out of git (`data/raw/` is gitignored).
-- Strip name, email, device serial, GPS, and any other identifier before analysis.
-- Commit only aggregated per-run summaries (mean HR, cadence, duration, song tempo) or a synthetic schema example.
-
-## Psychological claims
-
-The CS410 milestone and the mood-playlist helper talk about emotion and valence. Neither file is a controlled study of psychological effect. Do not treat playlist output or the HarmoniAI pitch as clinical evidence.
+Nothing in this repo is a controlled study of how music affects heart rate, cadence, or mood.
+The tempo-to-zone table is a cross-dataset mapping, and the mood playlist helper is a ranking rule.
