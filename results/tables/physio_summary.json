@@ -1,0 +1,30 @@
+{
+  "fuller": {
+    "rows_apple_watch": 3656,
+    "inferred_participant_groups": 49
+  },
+  "treadmill": {
+    "adult_tests": 847,
+    "adult_participants": 737,
+    "hr_peak_median": 187.0,
+    "hr_speed_slope_median_bpm_per_kmh": 6.318830924892026,
+    "hr_speed_slope_iqr": [
+      5.258062157938374,
+      7.385562355453953
+    ],
+    "hrr60_median": 28.0,
+    "hrr60_n": 846
+  },
+  "cadence": {
+    "trials": 101,
+    "runners": 39,
+    "intercept": 136.1235402919281,
+    "slope_spm_per_kmh": 2.7980559229039343,
+    "slope_se": 0.1992446943808162,
+    "speed_range_kmh": [
+      9.0,
+      16.2
+    ]
+  },
+  "spotify_tracks": 821
+}
