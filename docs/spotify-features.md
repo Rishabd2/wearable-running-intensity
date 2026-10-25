@@ -1,7 +1,7 @@
 # Appendix: Spotify audio-feature study
 
 A separate statistical study of the 821 pop tracks whose tempo and energy feed the tempo-to-zone
-mapping. It is regenerated from the saved CSV by `python -m src`, which writes
+mapping. It is regenerated from the saved CSV by `python -m src.spotify`, which writes
 `results/tables/analysis_summary.json`, the other non-`physio_` tables, and the non-`physio_`
 figures.
 
@@ -18,7 +18,7 @@ The sections below restate what the original notebook did. They do not add new t
 
 ## Sample
 
-`src/extract_spotify.py` repeats the collection function from `spotify-trends-main/analysis.ipynb`.
+`src/spotify/extract_spotify.py` repeats the collection function from `spotify-trends-main/analysis.ipynb`.
 
 1. Query the Spotify search endpoint with `genre:Pop year:2011-2022` plus a random letter.
 2. Use a random offset in `0..899` and pick one of the ten returned tracks.
@@ -29,7 +29,7 @@ The function is seeded, but Spotify search ranking changes, so a new pull will n
 
 ## Cleaning
 
-`src/clean.py`:
+`src/spotify/clean.py`:
 
 - Cast numeric feature columns to float.
 - Drop duplicate `track_id` values (`n = 821` unique tracks).
@@ -40,10 +40,10 @@ The function is seeded, but Spotify search ranking changes, so a new pull will n
 
 1. **Descriptive.** Pearson correlation among audio features. The original writeup followed danceability because it had the largest correlation with valence.
 2. **Two-sample energy test.** Compare mean energy for Major vs Minor. The notebook used
-   `sqrt(mean_major^2 / se_major + mean_minor^2 / se_minor)` as the denominator and `df = 33`. `src/analyze.py` reprints that calculation so the published `p ≈ 0.995` can be regenerated. It also stores a Welch t-test on the same two series; that is labeled separately and is not a finding from the original paper.
+   `sqrt(mean_major^2 / se_major + mean_minor^2 / se_minor)` as the denominator and `df = 33`. `src/spotify/analyze.py` reprints that calculation so the published `p ≈ 0.995` can be regenerated. It also stores a Welch t-test on the same two series; that is labeled separately and is not a finding from the original paper.
 3. **OLS.** `energy ~ loudness + valence + liveness + key_name + acousticness + time_signature` on all 821 tracks.
 4. **Logit.** `mode ~ tempo + energy + danceability + valence + time_signature` on an 80/20 split with `random_state=25`. Backward selection in the notebook left a model the authors called insufficient.
 
 ## Mood playlist
 
-`src/mood_playlist.py` is a later notebook helper. An adjective maps to a valence interval. Tracks inside that interval are ranked by the sum of z-scored danceability, energy, acousticness, instrumentalness, and liveness. This is a ranking rule, not an experiment.
+`src/spotify/mood_playlist.py` is a later notebook helper. An adjective maps to a valence interval. Tracks inside that interval are ranked by the sum of z-scored danceability, energy, acousticness, instrumentalness, and liveness. This is a ranking rule, not an experiment.

@@ -1,11 +1,11 @@
-"""python -m src  →  clean, analyze, and write figures."""
+"""python -m src.spotify  ->  clean, analyze, and write the Spotify appendix tables and figures."""
 
 from pathlib import Path
 
 from .analyze import run_analysis, write_tables
 from .plot import write_figures
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "data" / "processed" / "pop_tracks_raw.csv"
 CLEAN = ROOT / "data" / "processed" / "pop_tracks.csv"
 TABLES = ROOT / "results" / "tables"

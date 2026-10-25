@@ -18,8 +18,8 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-from ..clean import clean_tracks, load_raw
-from ..plot import ACCENT, ACCENT_2, INK, MUTED, _save, _style
+from ..spotify.clean import clean_tracks, load_raw
+from ..style import ACCENT, ACCENT_2, INK, MUTED, _save, _style
 from .zones import ZONE_BOUNDS, ZONE_NAMES
 
 ZONE_COLORS = ["#c9d8cf", "#9dbcab", "#6f9f86", "#b8826b", "#b45a3c"]
@@ -101,8 +101,8 @@ def tempo_zone_map(table: pd.DataFrame, tracks: pd.DataFrame, dest: Path) -> Non
         hatch = "//" if bool(row["extrapolated"]) else None
         ax.axvspan(lo, hi, facecolor=color, alpha=0.55, lw=0, hatch=hatch, edgecolor="white")
         label = row["zone"] + ("*" if bool(row["extrapolated"]) else "")
-        ax.text((lo + hi) / 2, top * (0.97 if k % 2 == 0 else 0.90), label, ha="center", va="top",
-                fontsize=9, color=INK)
+        ax.text((lo + hi) / 2, top * (0.97 if k % 2 == 0 else 0.82), label, ha="center", va="top",
+                fontsize=9, color=INK, bbox={"boxstyle": "round,pad=0.15", "fc": "white", "ec": "none", "alpha": 0.85})
     ax.set_xlabel("Beats per minute (tempo) and steps per minute (mapped cadence band)")
     ax.set_ylabel(f"Tracks (n = {len(tracks)})")
     ax.set_title("Mapped cadence band per HR zone over the Spotify tempo distribution\n"

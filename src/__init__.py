@@ -1,1 +1,1 @@
-"""Reusable pieces of the Spotify pop-feature analysis."""
+"""Wearable running intensity: physiology pipeline (src.physio) and Spotify appendix (src.spotify)."""

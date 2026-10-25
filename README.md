@@ -96,7 +96,7 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt          # pinned versions used for the committed results
 python -m src.physio.fetch               # about 66 MB into data/raw/, checked against data/manifest.json
 python -m src.physio                     # tables and figures (several minutes, mostly model fitting)
-python -m src                            # Spotify appendix tables and figures
+python -m src.spotify                    # Spotify appendix tables and figures
 pytest -q
 ```
 
@@ -141,7 +141,8 @@ parser is the better input.
 ```
 src/physio/        fetch, zones, cv scoring, Apple Watch models, treadmill HR, cadence, mapping,
                    Apple Health parser, figures
-src/               Spotify appendix (clean, analyze, plot, mood_playlist, extract_spotify)
+src/spotify/       Spotify appendix (clean, analyze, plot, mood_playlist, extract_spotify)
+src/style.py       shared figure style
 data/manifest.json URLs and published checksums for the downloads
 data/processed/    saved Spotify sample
 results/tables/    every number quoted above (physio_*) and the Spotify appendix tables

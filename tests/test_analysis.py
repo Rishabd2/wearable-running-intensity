@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from src.analyze import run_analysis
-from src.clean import clean_tracks, load_raw
-from src.mood_playlist import create_playlist, map_characteristics_to_mood
+from src.spotify.analyze import run_analysis
+from src.spotify.clean import clean_tracks, load_raw
+from src.spotify.mood_playlist import create_playlist, map_characteristics_to_mood
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "processed" / "pop_tracks_raw.csv"
