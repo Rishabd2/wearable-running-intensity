@@ -42,6 +42,19 @@ def _get(url: str, timeout: int = 120) -> bytes:
         return resp.read()
 
 
+def _download(url: str, dest: Path, algo: str, timeout: int = 120) -> str:
+    """Stream ``url`` to ``dest`` in chunks and return its digest. PhysioNet can be slow."""
+    h = hashlib.new(algo)
+    part = dest.with_suffix(dest.suffix + ".part")
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=timeout) as resp, part.open("wb") as out:
+        for chunk in iter(lambda: resp.read(1 << 16), b""):
+            h.update(chunk)
+            out.write(chunk)
+    part.replace(dest)
+    return h.hexdigest()
+
+
 def build_manifest() -> dict:
     """Query each repository API and record URL plus published checksum per file."""
     entries = []
@@ -125,18 +138,18 @@ def fetch(raw: Path = RAW, retries: int = 4) -> None:
             continue
         for attempt in range(1, retries + 1):
             try:
-                data = _get(entry["url"], timeout=600)
+                digest = _download(entry["url"], path, entry["algo"])
             except OSError as exc:  # network hiccup: retry
                 print(f"  retry {attempt} {entry['name']}: {exc}", file=sys.stderr)
                 time.sleep(2 * attempt)
                 continue
-            if hashlib.new(entry["algo"], data).hexdigest() == entry["checksum"]:
-                path.write_bytes(data)
+            if digest == entry["checksum"]:
                 break
+            path.unlink(missing_ok=True)
             print(f"  checksum mismatch {entry['name']} (attempt {attempt})", file=sys.stderr)
         else:
             raise SystemExit(f"could not fetch a verified copy of {entry['name']}")
-        print(f"[{i}/{len(files)}] {entry['dataset']}/{entry['name']}")
+        print(f"[{i}/{len(files)}] {entry['dataset']}/{entry['name']}", flush=True)
     print(f"all {len(files)} files verified under {raw}")
 
 
