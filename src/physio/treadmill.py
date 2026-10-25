@@ -28,9 +28,9 @@ import pandas as pd
 from sklearn.dummy import DummyClassifier
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import GroupKFold
 
+from .cv import score_folds
 from .zones import ZONE_BOUNDS, ZONE_NAMES, zone_of
 
 SMOOTH = 5
@@ -155,18 +155,12 @@ def predict_zone(effort: pd.DataFrame, n_splits: int = 5, seed: int = 410, every
     folds = list(GroupKFold(n_splits=n_splits).split(effort, y, groups))
     rows = []
     for name, (model, cols) in specs.items():
-        X = effort[cols].to_numpy()
-        preds = np.empty_like(y)
-        for train, test in folds:
-            model.fit(X[train], y[train])
-            preds[test] = model.predict(X[test])
         rows.append({
             "split": "grouped by participant",
             "model": name,
             "n_rows": len(y),
             "n_participants": int(len(np.unique(groups))),
-            "accuracy": accuracy_score(y, preds),
-            "macro_f1": f1_score(y, preds, average="macro"),
+            **score_folds(model, effort[cols].to_numpy(), y, folds),
         })
     return pd.DataFrame(rows)
 

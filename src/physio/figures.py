@@ -32,24 +32,25 @@ TASK_TITLES = {
 
 
 def prediction_scores(scores: pd.DataFrame, dest: Path) -> None:
-    fig, axes = plt.subplots(1, 3, figsize=(14.5, 4.6))
+    fig, axes = plt.subplots(1, 3, figsize=(15.5, 5.6))
     for ax, task in zip(axes, TASKS):
         sub = scores[scores["task"] == task]
         grouped = sub[sub["split"] == "grouped by participant"].reset_index(drop=True)
         models = grouped["model"].tolist()
         y = np.arange(len(models))
-        ax.barh(y + 0.18, grouped["macro_f1"], height=0.34, color=ACCENT, label="grouped by participant")
+        ax.barh(y + 0.18, grouped["macro_f1"], height=0.34, color=ACCENT, label="grouped by participant",
+                xerr=grouped["macro_f1_sd"], error_kw={"ecolor": INK, "lw": 0.8, "capsize": 2})
         rand = sub[sub["split"] == "random rows (stratified)"]
         if not rand.empty:
             rand = rand.set_index("model").loc[models]
             ax.barh(y - 0.18, rand["macro_f1"], height=0.34, color="#c8c2b4",
                     label="random rows (same wearer in train and test)")
-        for yi, v in zip(y, grouped["macro_f1"]):
-            ax.text(v + 0.01, yi + 0.18, f"{v:.2f}", va="center", fontsize=9, color=INK)
+        for yi, v, sd in zip(y, grouped["macro_f1"], grouped["macro_f1_sd"]):
+            ax.text(v + sd + 0.015, yi + 0.18, f"{v:.2f}", va="center", fontsize=9, color=INK)
         ax.set_yticks(y)
         ax.set_yticklabels([m.replace(", ", ",\n") for m in models], fontsize=8.5)
         ax.set_xlim(0, 1)
-        ax.set_xlabel("Macro F1, 5-fold CV")
+        ax.set_xlabel("Macro F1, mean of 5 folds (bar: fold SD)")
         ax.set_title(TASK_TITLES[task], fontsize=11)
     axes[0].legend(frameon=False, fontsize=8, loc="lower right")
     fig.suptitle("Participant-held-out scores (green) are the headline; random-row splits shown for contrast", y=1.02)
@@ -95,12 +96,13 @@ def tempo_zone_map(table: pd.DataFrame, tracks: pd.DataFrame, dest: Path) -> Non
     ax.hist(tracks["tempo"], bins=bins, color=ACCENT, alpha=0.75, label="Spotify track tempo")
     ax.hist(2 * tracks["tempo"], bins=bins, color="#c8c2b4", alpha=0.6, label="2 x tempo (one beat per two steps)")
     top = ax.get_ylim()[1]
-    for (_, row), color in zip(table.iterrows(), ZONE_COLORS[1:]):
+    for k, ((_, row), color) in enumerate(zip(table.iterrows(), ZONE_COLORS[1:])):
         lo, hi = (float(v) for v in row["cadence_spm_mapped"].split("-"))
         hatch = "//" if bool(row["extrapolated"]) else None
         ax.axvspan(lo, hi, facecolor=color, alpha=0.55, lw=0, hatch=hatch, edgecolor="white")
         label = row["zone"] + ("*" if bool(row["extrapolated"]) else "")
-        ax.text((lo + hi) / 2, top * 0.97, label, ha="center", va="top", fontsize=9, color=INK)
+        ax.text((lo + hi) / 2, top * (0.97 if k % 2 == 0 else 0.90), label, ha="center", va="top",
+                fontsize=9, color=INK)
     ax.set_xlabel("Beats per minute (tempo) and steps per minute (mapped cadence band)")
     ax.set_ylabel(f"Tracks (n = {len(tracks)})")
     ax.set_title("Mapped cadence band per HR zone over the Spotify tempo distribution\n"

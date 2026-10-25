@@ -21,10 +21,11 @@ import pandas as pd
 from sklearn.dummy import DummyClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import GroupKFold, StratifiedKFold
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
+
+from .cv import score_folds
 
 HR_FEATURES = ["hear_rate", "norm_heart", "intensity_karvonen"]
 ALL_FEATURES = [
@@ -48,20 +49,30 @@ def load(path: str | Path, device: str = "apple watch") -> pd.DataFrame:
     return df.reset_index(drop=True)
 
 
+def _logistic():
+    return make_pipeline(StandardScaler(), LogisticRegression(max_iter=3000))
+
+
+def _forest():
+    return RandomForestClassifier(n_estimators=200, random_state=SEED, n_jobs=-1)
+
+
 def models() -> dict:
+    """Each model family on both feature sets, so model and features are not confounded."""
     return {
-        "majority class": DummyClassifier(strategy="most_frequent"),
-        "logistic, HR features only": make_pipeline(StandardScaler(), LogisticRegression(max_iter=2000)),
-        "random forest, all features": RandomForestClassifier(n_estimators=200, random_state=SEED, n_jobs=-1),
+        "majority class": (DummyClassifier(strategy="most_frequent"), HR_FEATURES),
+        "logistic, HR features only": (_logistic(), HR_FEATURES),
+        "logistic, all features": (_logistic(), ALL_FEATURES),
+        "random forest, HR features only": (_forest(), HR_FEATURES),
+        "random forest, all features": (_forest(), ALL_FEATURES),
     }
 
 
-def _features_for(name: str) -> list[str]:
-    return HR_FEATURES if "HR features" in name else ALL_FEATURES
-
-
 def evaluate(df: pd.DataFrame, target_rows: pd.Series | None = None, n_splits: int = 5) -> pd.DataFrame:
-    """Score each model with grouped (by participant) and plain stratified K-fold."""
+    """Score each model with grouped (by participant) and plain stratified K-fold.
+
+    Scores are the mean and SD over the 5 test folds.
+    """
     data = df if target_rows is None else df[target_rows]
     y = data["activity"].astype(str).to_numpy()
     groups = data["participant"].to_numpy()
@@ -72,19 +83,14 @@ def evaluate(df: pd.DataFrame, target_rows: pd.Series | None = None, n_splits: i
     rows = []
     for split_name, split in splitters.items():
         folds = list(split)
-        for model_name, model in models().items():
-            X = data[_features_for(model_name)].to_numpy()
-            preds = np.empty_like(y)
-            for train, test in folds:
-                model.fit(X[train], y[train])
-                preds[test] = model.predict(X[test])
+        for model_name, (model, cols) in models().items():
+            X = data[cols].to_numpy()
             rows.append({
                 "split": split_name,
                 "model": model_name,
                 "n_rows": len(y),
                 "n_participants": int(len(np.unique(groups))),
-                "accuracy": accuracy_score(y, preds),
-                "macro_f1": f1_score(y, preds, average="macro"),
+                **score_folds(model, X, y, folds),
             })
     return pd.DataFrame(rows)
 
@@ -95,7 +101,7 @@ def grouped_confusion(df: pd.DataFrame, n_splits: int = 5) -> pd.DataFrame:
     X = df[ALL_FEATURES].to_numpy()
     preds = np.empty_like(y)
     for train, test in GroupKFold(n_splits=n_splits).split(X, y, df["participant"]):
-        model = RandomForestClassifier(n_estimators=200, random_state=SEED, n_jobs=-1)
+        model = _forest()
         model.fit(X[train], y[train])
         preds[test] = model.predict(X[test])
     table = pd.crosstab(pd.Series(y, name="true"), pd.Series(preds, name="predicted"), normalize="index")
