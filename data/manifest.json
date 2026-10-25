@@ -1,0 +1,845 @@
+{
+ "built": "2026-10-24",
+ "files": [
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS001runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802551",
+   "algo": "md5",
+   "checksum": "d4c77dd675ac270b3adbe4764588fac8",
+   "size": 408864
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS001runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802557",
+   "algo": "md5",
+   "checksum": "dddd2c5d2e16b09ad91ccdd914e74b96",
+   "size": 401971
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS001runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802554",
+   "algo": "md5",
+   "checksum": "45eb40f39cfb94b49e31209de858fbb3",
+   "size": 397567
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS002runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802560",
+   "algo": "md5",
+   "checksum": "aa96fc650cef9d4efd9d3efd2d9eca1e",
+   "size": 426375
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS002runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802563",
+   "algo": "md5",
+   "checksum": "7c57a2fcffac4e91658d2af0c548fae0",
+   "size": 402481
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS002runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802566",
+   "algo": "md5",
+   "checksum": "6d250190542964dc09164b846e17c4d0",
+   "size": 396505
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS003runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802569",
+   "algo": "md5",
+   "checksum": "dc07439a43a1b96dae7793d0d0ea5de7",
+   "size": 395754
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS003runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802572",
+   "algo": "md5",
+   "checksum": "ccc24bc7706d216e8873dc859302575a",
+   "size": 387192
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS003runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802575",
+   "algo": "md5",
+   "checksum": "b10ba4165f700904ed6d569d2365c7ca",
+   "size": 388631
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS004runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802578",
+   "algo": "md5",
+   "checksum": "92a38ba45e43cfa29fa03e7544e705f2",
+   "size": 408315
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS004runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802581",
+   "algo": "md5",
+   "checksum": "622c86870783c21be2bde56d3a455be1",
+   "size": 391055
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS004runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802584",
+   "algo": "md5",
+   "checksum": "20947cdc40976bfcaeaa4d4f99d91607",
+   "size": 384074
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS005runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802587",
+   "algo": "md5",
+   "checksum": "691a3b2e0ac4e42c5b1a25451180556d",
+   "size": 417399
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS005runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802590",
+   "algo": "md5",
+   "checksum": "00452ea576d8a65ab7f21bb9e1be89a7",
+   "size": 402292
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS005runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802593",
+   "algo": "md5",
+   "checksum": "16d68723e64b6191dee871e3a4969f36",
+   "size": 393797
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS006runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802596",
+   "algo": "md5",
+   "checksum": "e533089163b3c9d29289a09a60a0b06f",
+   "size": 425878
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS006runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802599",
+   "algo": "md5",
+   "checksum": "16cfceae68a35b43ca0d76fc22aaf3ac",
+   "size": 410890
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS006runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802602",
+   "algo": "md5",
+   "checksum": "899f1ffeb13383b0551872332c5528b6",
+   "size": 403103
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS007runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802605",
+   "algo": "md5",
+   "checksum": "1b104948d75dd502800e5d1a97260892",
+   "size": 401684
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS007runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802608",
+   "algo": "md5",
+   "checksum": "ba39b92e8f9dd9fcebb636bd3a8dd941",
+   "size": 391732
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS007runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802611",
+   "algo": "md5",
+   "checksum": "a3da2e696cf293b30a16df55d5237cae",
+   "size": 388987
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS008runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802614",
+   "algo": "md5",
+   "checksum": "8338480b6397f0cb178f8b0d3ae22b10",
+   "size": 424153
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS008runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802617",
+   "algo": "md5",
+   "checksum": "b525ff1a2553a75980156cfe50230d04",
+   "size": 405771
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS008runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802620",
+   "algo": "md5",
+   "checksum": "b0479912d3e8d0f331da21c4562fd25d",
+   "size": 398242
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS009runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802623",
+   "algo": "md5",
+   "checksum": "3762eb19f63fc33ce3d7f00f36f9b1da",
+   "size": 390364
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS009runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802626",
+   "algo": "md5",
+   "checksum": "89efe3ca8cb9315f3c715b347202defd",
+   "size": 386646
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS009runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802629",
+   "algo": "md5",
+   "checksum": "f71024487816dbb41a56eef6e9fc57a5",
+   "size": 386351
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS010runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802632",
+   "algo": "md5",
+   "checksum": "53214d081a1905477424561d082152c2",
+   "size": 410185
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS010runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802635",
+   "algo": "md5",
+   "checksum": "ef5c1c7c0081a78823ffa9171f628278",
+   "size": 393220
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS010runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802638",
+   "algo": "md5",
+   "checksum": "7a9fd133cdbdabc50e4f5ad755847e4c",
+   "size": 383532
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS011runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802641",
+   "algo": "md5",
+   "checksum": "c19d9e9f4dba8153a25f93e8b9b33192",
+   "size": 407799
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS011runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802644",
+   "algo": "md5",
+   "checksum": "f0870b27902fda2a4a51f03575329b53",
+   "size": 391863
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS011runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802647",
+   "algo": "md5",
+   "checksum": "e4c05b6b04a3f6f5ce00382d4614c1ce",
+   "size": 388718
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS012runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802650",
+   "algo": "md5",
+   "checksum": "23284c10b4817f5db948b82e429f80dc",
+   "size": 403800
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS012runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802653",
+   "algo": "md5",
+   "checksum": "e993aaa963d663a0e2b5605ac6af5183",
+   "size": 399105
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS012runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802656",
+   "algo": "md5",
+   "checksum": "d326217a505e38d99572397ac38eade8",
+   "size": 394516
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS013runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802659",
+   "algo": "md5",
+   "checksum": "cc113c3a1f647b6ae8ba2d0186a1d986",
+   "size": 384675
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS013runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802662",
+   "algo": "md5",
+   "checksum": "8aaf7984d22a91d464dcbfdf3210700e",
+   "size": 371231
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS013runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802665",
+   "algo": "md5",
+   "checksum": "289bf355bf5f9adf38f97fd904ea6374",
+   "size": 366471
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS014runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802668",
+   "algo": "md5",
+   "checksum": "8504507e0bb70daea903fde84b649ae6",
+   "size": 420552
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS014runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802671",
+   "algo": "md5",
+   "checksum": "82fdc46db322abc7e949f929efe2d350",
+   "size": 401141
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS014runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802674",
+   "algo": "md5",
+   "checksum": "e32f2ca31b09c26eca2c304e83b7b0d4",
+   "size": 398587
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS015runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802677",
+   "algo": "md5",
+   "checksum": "2bfc6076cb7282cdaedbbbfddef1ec81",
+   "size": 411777
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS015runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802680",
+   "algo": "md5",
+   "checksum": "b296add67055aa0342d7ff8f624560fc",
+   "size": 400281
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS015runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802683",
+   "algo": "md5",
+   "checksum": "75eb039cdf9260e81ec3ff3e0e3a9aac",
+   "size": 394152
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS016runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802686",
+   "algo": "md5",
+   "checksum": "c67a3d06caac45dd96783f2652eb95a1",
+   "size": 414073
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS016runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802689",
+   "algo": "md5",
+   "checksum": "e6fb8260266021ff0bc034a2b0462c35",
+   "size": 394281
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS016runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802692",
+   "algo": "md5",
+   "checksum": "0fde1a84a69263a5458c51f9a298681e",
+   "size": 388812
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS017runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802695",
+   "algo": "md5",
+   "checksum": "daa3b8ddd0ae8a7ad66790a3b2259c2f",
+   "size": 397739
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS017runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802698",
+   "algo": "md5",
+   "checksum": "7a5589ea14e1ba67436461bd68b91a7f",
+   "size": 387796
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS017runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802701",
+   "algo": "md5",
+   "checksum": "c11fb924b84f1b85b1ba19b6f0cbd224",
+   "size": 380746
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS018runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802704",
+   "algo": "md5",
+   "checksum": "4e678a3801c7c7f6aeefd69f2e80d22f",
+   "size": 413604
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS018runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802707",
+   "algo": "md5",
+   "checksum": "685f52a9292a55cb560639b1949b9d7d",
+   "size": 393496
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS018runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802710",
+   "algo": "md5",
+   "checksum": "72c83edae1000f78dda25c4eb6ae5cc7",
+   "size": 383244
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS019runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802713",
+   "algo": "md5",
+   "checksum": "3aede64731b657ed8f3dac711ad9cad6",
+   "size": 391354
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS019runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802716",
+   "algo": "md5",
+   "checksum": "800576fe2380a99edd6b5a3066c87099",
+   "size": 381948
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS019runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802719",
+   "algo": "md5",
+   "checksum": "3419a6f55868ca9513cc6af6724ef660",
+   "size": 379313
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS020runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802722",
+   "algo": "md5",
+   "checksum": "5a192da4527df41c522695e1880d0ab0",
+   "size": 413378
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS020runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802725",
+   "algo": "md5",
+   "checksum": "d9f3892f12909853c7941a367f7ae5bf",
+   "size": 398575
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS020runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802728",
+   "algo": "md5",
+   "checksum": "0a83cbb82a462da7434ee6d7cab21f82",
+   "size": 393099
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS021runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802731",
+   "algo": "md5",
+   "checksum": "3de3d915aa90a374ca984bfe33701b25",
+   "size": 408048
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS021runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802734",
+   "algo": "md5",
+   "checksum": "020b770b854744f6fe404226e1c1bbc3",
+   "size": 397491
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS021runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802737",
+   "algo": "md5",
+   "checksum": "3e8773fb4637a01e6ee79bff400e0955",
+   "size": 390981
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS022runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802740",
+   "algo": "md5",
+   "checksum": "581bcd51ebc235be6a117c85280aef51",
+   "size": 421674
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS022runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802743",
+   "algo": "md5",
+   "checksum": "8cfd2495d11cadb383069ff76ecb611a",
+   "size": 408442
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS022runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802746",
+   "algo": "md5",
+   "checksum": "fe99a1a64a007039efe585d0a621ed1d",
+   "size": 397854
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS023runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802497",
+   "algo": "md5",
+   "checksum": "44fd6bc42c2bc080a8cc12a5029dc1fe",
+   "size": 404338
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS023runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802500",
+   "algo": "md5",
+   "checksum": "ee5280f4e97f8b1e406c63d871e00f9c",
+   "size": 395089
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS023runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802503",
+   "algo": "md5",
+   "checksum": "619461a57670da6e2ef11eb1a34670b0",
+   "size": 389726
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS024runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802506",
+   "algo": "md5",
+   "checksum": "991728aa3637cacf9dd0b2a0720269b8",
+   "size": 399431
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS024runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802509",
+   "algo": "md5",
+   "checksum": "133c12cf02f45d20faea26be153f3491",
+   "size": 389587
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS024runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802512",
+   "algo": "md5",
+   "checksum": "d9cb2819a7287f3f2b0a8631aadceb90",
+   "size": 389275
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS025runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802515",
+   "algo": "md5",
+   "checksum": "89db81f1c0623bf24f349e2f5ca838cd",
+   "size": 408133
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS025runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802518",
+   "algo": "md5",
+   "checksum": "42c4852215e7c10c8f5d3f9d269164a0",
+   "size": 394954
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS025runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802521",
+   "algo": "md5",
+   "checksum": "136e1f93fa08c10ae6eea958efcace71",
+   "size": 389164
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS026runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802524",
+   "algo": "md5",
+   "checksum": "713eecdaa0fb2150a02779a0977e79bb",
+   "size": 413806
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS026runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802527",
+   "algo": "md5",
+   "checksum": "0d49b65c1b2daa78a7015a121e3c8ffa",
+   "size": 390346
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS026runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802530",
+   "algo": "md5",
+   "checksum": "9a74446f588b35cefdd1df1370838e0c",
+   "size": 374751
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS027runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802533",
+   "algo": "md5",
+   "checksum": "be588dc80addda48e00cf8be7fba1aac",
+   "size": 405400
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS027runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802536",
+   "algo": "md5",
+   "checksum": "a0b1dc1c3497634e370c6f9220912379",
+   "size": 394361
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS027runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802539",
+   "algo": "md5",
+   "checksum": "e5ed9a8988d3527f671e2fe8f43ddf5d",
+   "size": 385500
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS028runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802542",
+   "algo": "md5",
+   "checksum": "7741295e715dc75eb5a98c8137dc310d",
+   "size": 411306
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS028runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802545",
+   "algo": "md5",
+   "checksum": "f9b93164ce08f20727cbe1acb788d5c4",
+   "size": 399903
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS028runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/7802548",
+   "algo": "md5",
+   "checksum": "a1b8caf9d242dba04611f8c1f8755d3e",
+   "size": 395383
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS029runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452683",
+   "algo": "md5",
+   "checksum": "2ee576145f1df3d6c568f3b6bd80401c",
+   "size": 478349
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS029runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452692",
+   "algo": "md5",
+   "checksum": "2ee576145f1df3d6c568f3b6bd80401c",
+   "size": 478349
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS029runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452701",
+   "algo": "md5",
+   "checksum": "2ee576145f1df3d6c568f3b6bd80401c",
+   "size": 478349
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS030runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452719",
+   "algo": "md5",
+   "checksum": "69eab2ab73db7f68929501cce78facde",
+   "size": 481332
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS030runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452728",
+   "algo": "md5",
+   "checksum": "69eab2ab73db7f68929501cce78facde",
+   "size": 481332
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS030runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452737",
+   "algo": "md5",
+   "checksum": "69eab2ab73db7f68929501cce78facde",
+   "size": 481332
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS031runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452755",
+   "algo": "md5",
+   "checksum": "200e7b28ba26aabbdfc21d7256387f9e",
+   "size": 478016
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS032runT25forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452773",
+   "algo": "md5",
+   "checksum": "e87bb3c2bd7d5e8e06b9b4d5b6aea314",
+   "size": 491078
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS032runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452782",
+   "algo": "md5",
+   "checksum": "e87bb3c2bd7d5e8e06b9b4d5b6aea314",
+   "size": 491078
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS032runT45forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452791",
+   "algo": "md5",
+   "checksum": "e87bb3c2bd7d5e8e06b9b4d5b6aea314",
+   "size": 491078
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS033runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452809",
+   "algo": "md5",
+   "checksum": "1175f8bae2e4636643520623a7abaf21",
+   "size": 489083
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS034runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452827",
+   "algo": "md5",
+   "checksum": "68a3acc8f00c91e5333a99d50ea51da5",
+   "size": 484906
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS035runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452845",
+   "algo": "md5",
+   "checksum": "31686a5d43c0dfda0c6e383d3765b6ec",
+   "size": 481613
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS036runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452866",
+   "algo": "md5",
+   "checksum": "a1ba309a8c187dccf243749232ebc30b",
+   "size": 480714
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS037runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452884",
+   "algo": "md5",
+   "checksum": "ccf04cf20b32fce55745aa2ed989e987",
+   "size": 212468
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS038runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452902",
+   "algo": "md5",
+   "checksum": "c0a13c9e9cc94fa0e1d1a009c611b7de",
+   "size": 479423
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDS039runT35forces.txt",
+   "url": "https://ndownloader.figshare.com/files/39452920",
+   "algo": "md5",
+   "checksum": "7fbcc327cc83fe8e75e703160613d422",
+   "size": 478796
+  },
+  {
+   "dataset": "fukuchi_running",
+   "name": "RBDSinfo.txt",
+   "url": "https://ndownloader.figshare.com/files/39452932",
+   "algo": "md5",
+   "checksum": "1a5ab43a3d90e018d0df4c5732f2af51",
+   "size": 142235
+  },
+  {
+   "dataset": "fuller_apple_watch",
+   "name": "aw_fb_data.csv",
+   "url": "https://dataverse.harvard.edu/api/access/datafile/3644399",
+   "algo": "md5",
+   "checksum": "aab70486cd70c51f202e4442d3125236",
+   "size": 1375726
+  },
+  {
+   "dataset": "malaga_treadmill",
+   "name": "subject-info.csv",
+   "url": "https://physionet.org/files/treadmill-exercise-cardioresp/1.0.1/subject-info.csv",
+   "algo": "sha256",
+   "checksum": "e9ca5ba20eb1272df56c11d3e584ec3997d5484454812bd94966e58082415f16",
+   "size": null
+  },
+  {
+   "dataset": "malaga_treadmill",
+   "name": "test_measure.csv",
+   "url": "https://physionet.org/files/treadmill-exercise-cardioresp/1.0.1/test_measure.csv",
+   "algo": "sha256",
+   "checksum": "3b5ed5586dc7412ccdfb26f804e29c06482a2a1df2060399c2731ebc68d4613d",
+   "size": null
+  }
+ ]
+}
