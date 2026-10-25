@@ -118,6 +118,22 @@ def zone_samples(measure: pd.DataFrame, tests: pd.DataFrame) -> pd.DataFrame:
     return effort
 
 
+def hr_by_speed(effort: pd.DataFrame, min_breaths: int = 200) -> pd.DataFrame:
+    """HR as a fraction of test peak, binned to whole km/h, running and walking speeds (>= 5 km/h)."""
+    data = effort[effort["Speed"] >= 5].assign(
+        speed_bin=lambda d: d["Speed"].round(0), frac=lambda d: d["hr_s"] / d["hr_peak"]
+    )
+    g = data.groupby("speed_bin")
+    out = pd.DataFrame({
+        "n_breaths": g.size(),
+        "n_tests": g["ID_test"].nunique(),
+        "frac_hrmax_median": g["frac"].median(),
+        "frac_hrmax_q25": g["frac"].quantile(0.25),
+        "frac_hrmax_q75": g["frac"].quantile(0.75),
+    }).reset_index()
+    return out[out["n_breaths"] >= min_breaths].reset_index(drop=True)
+
+
 def predict_zone(effort: pd.DataFrame, n_splits: int = 5, seed: int = 410, every: int = 5) -> pd.DataFrame:
     """Predict the HR zone of a breath without using HR, grouped by participant.
 
@@ -162,6 +178,7 @@ def run(measure_path: str | Path, info_path: str | Path) -> dict:
     return {
         "tests": tests,
         "zone_speeds": zone_speed_table(tests),
+        "hr_by_speed": hr_by_speed(effort),
         "zone_scores": predict_zone(effort).assign(task="HR zone per breath (no HR input)"),
         "effort": effort,
     }

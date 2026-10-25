@@ -144,7 +144,7 @@ def plot_ols_coefs(ols, dest: Path) -> None:
 def plot_tempo_energy(df: pd.DataFrame, dest: Path) -> None:
     fig, ax = plt.subplots(figsize=(7.2, 5.4))
     ax.scatter(df["tempo"], df["energy"], s=18, alpha=0.45, c=ACCENT, edgecolors="none")
-    ax.set_title("Tempo vs energy (no running or HR overlay)")
+    ax.set_title("Tempo vs energy, unique pop tracks")
     ax.set_xlabel("Tempo (BPM)")
     ax.set_ylabel("Energy")
     r = df["tempo"].corr(df["energy"])

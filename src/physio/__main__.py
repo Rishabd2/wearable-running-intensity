@@ -39,6 +39,7 @@ def write_tables(b: dict) -> dict:
     b["fuller"]["summary"].to_csv(TABLES / "physio_fuller_activity_summary.csv", index=False, float_format="%.4f")
     b["fuller"]["confusion"].to_csv(TABLES / "physio_fuller_confusion.csv", float_format="%.4f")
     b["treadmill"]["zone_speeds"].to_csv(TABLES / "physio_zone_entry_speeds.csv", index=False, float_format="%.3f")
+    b["treadmill"]["hr_by_speed"].to_csv(TABLES / "physio_hr_by_speed.csv", index=False, float_format="%.4f")
     b["treadmill"]["tests"].to_csv(TABLES / "physio_treadmill_per_test.csv", index=False, float_format="%.3f")
     b["cadence"]["trials"].to_csv(TABLES / "physio_cadence_trials.csv", index=False, float_format="%.3f")
     b["cadence"]["by_speed"].to_csv(TABLES / "physio_cadence_by_speed.csv", index=False, float_format="%.3f")
@@ -75,7 +76,7 @@ def write_tables(b: dict) -> dict:
 def main() -> None:
     b = run()
     summary = write_tables(b)
-    figures.write_all(b, FIGURES)
+    figures.write_all(TABLES, FIGURES, TRACKS)
     grouped = b["scores"][b["scores"]["split"] == "grouped by participant"]
     print(grouped[["task", "model", "accuracy", "macro_f1"]].to_string(index=False))
     print(b["tempo_table"].to_string(index=False))
